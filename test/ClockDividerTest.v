@@ -1,29 +1,40 @@
 `timescale 1ns / 1ps
 
-// fpga4student.com FPGA projects, VHDL projects, Verilog projects
-// Verilog project: Verilog code for clock divider on FPGA
-// Testbench Verilog code for clock divider on FPGA
+//////////////////////////////////////////////////////////////////////////////
+// Module : ClockDividerTest
+// Purpose: Test bench for the ClockDivider
+//////////////////////////////////////////////////////////////////////////////
 module ClockDividerTest;
- // Inputs
- reg ClockIn;
- // Outputs
- wire ClockOut;
- // Instantiate the Unit Under Test (UUT)
- // Test the clock divider in Verilog
- ClockDivider uut
- (
-  .ClockIn(ClockIn), 
-  .ClockOut(ClockOut)
- );
+  
+//////////////////////////////////////////////////////////////////////////////
+// Registers
+//////////////////////////////////////////////////////////////////////////////
+reg ClockIn;
  
- initial begin
+//////////////////////////////////////////////////////////////////////////////
+// Wires
+//////////////////////////////////////////////////////////////////////////////
+wire ClockOut;
+
+// Instantiate the Unit Under Test (UUT)
+// Test the clock divider in Verilog
+ClockDivider uut
+(
+   .ClockIn(ClockIn), 
+   .ClockOut(ClockOut)
+);
+
+// Divide the clock by 50 for 1MHz
+defparam uut.DIVISOR = 50;
+ 
+initial begin
   // Initialize Inputs
   ClockIn = 0;
-
- end
+end
  
- always begin
-   #10 ClockIn = !ClockIn;
- end
+always begin
+  // Toggle the state of the clock every 10ns
+  #10 ClockIn = !ClockIn;
+end
       
 endmodule
