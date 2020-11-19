@@ -1,1 +1,22 @@
+C:/GitHub/DistanceLED-Altera-Cyclone-II/rtl/ClockDivider.v {1 {vlog -work distanceled C:/GitHub/DistanceLED-Altera-Cyclone-II/rtl/ClockDivider.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ClockDivider
 
+Top level modules:
+	ClockDivider
+
+} {} {}} C:/GitHub/DistanceLED-Altera-Cyclone-II/rtl/URMTrigger.v {1 {vlog -work distanceled C:/GitHub/DistanceLED-Altera-Cyclone-II/rtl/URMTrigger.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module URMTrigger
+
+Top level modules:
+	URMTrigger
+
+} {} {}} C:/GitHub/DistanceLED-Altera-Cyclone-II/test/ClockDividerTest.v {1 {vlog -work distanceled C:/GitHub/DistanceLED-Altera-Cyclone-II/test/ClockDividerTest.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ClockDividerTest
+
+Top level modules:
+	ClockDividerTest
+
+} {} {}}

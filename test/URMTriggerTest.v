@@ -1,40 +1,50 @@
 `timescale 1ns / 1ps
 
 //////////////////////////////////////////////////////////////////////////////
-// Module : ClockDividerTest
-// Purpose: Test bench for the ClockDivider
+// Module : URMTriggerTest
+// Purpose: Test bench for the URMTrigger
 //////////////////////////////////////////////////////////////////////////////
-module ClockDividerTest;
+module URMTriggerTest;
   
 //////////////////////////////////////////////////////////////////////////////
 // Registers
 //////////////////////////////////////////////////////////////////////////////
-reg ClockIn;
+reg Clock;
+reg TriggerIn;
  
 //////////////////////////////////////////////////////////////////////////////
 // Wires
 //////////////////////////////////////////////////////////////////////////////
-wire ClockOut;
+wire TriggerOut;
 
 // Instantiate the Unit Under Test (UUT)
-// Test the clock divider in Verilog
-ClockDivider uut
+// Test the ultrasonic range module trigger in Verilog
+URMTrigger uut
 (
-  .ClockIn(ClockIn), 
-  .ClockOut(ClockOut)
+  .Clock(Clock), 
+  .TriggerIn(TriggerIn),
+  .TriggerOut(TriggerOut)
 );
-
-// Divide the clock by 50 for 1MHz
-defparam uut.DIVISOR = 50;
  
 initial begin
   // Initialize Inputs
-  ClockIn = 0;
+  Clock = 0;
+  TriggerIn = 0;
 end
  
 always begin
   // Toggle the state of the clock every 10ns
-  #10 ClockIn = !ClockIn;
+  #10 Clock = !Clock;
+end
+
+always begin
+  #10;
+  TriggerIn = 1;
+  #20;
+  TriggerIn = 0;
+  #100000;
 end
       
 endmodule
+
+

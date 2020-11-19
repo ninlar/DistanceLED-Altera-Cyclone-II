@@ -37,10 +37,13 @@ begin
   _counter <= _counter + 28'd1;
   
   if(_counter >= (DIVISOR - 1))
+  begin
     _counter <= 28'd0;
   end
+end
   
-  // We want the duty cycle to be the same. Half the cycle is one
-  // while the other have is zero.
-  assign ClockOut = (_counter < DIVISOR / 2) ? 1'b0 : 1'b1;
+// We want the duty cycle to be the same. Half the cycle is one
+// while the other have is zero.
+assign ClockOut = (_counter < DIVISOR / 2) ? 1'b0 : 1'b1;
+
 endmodule
