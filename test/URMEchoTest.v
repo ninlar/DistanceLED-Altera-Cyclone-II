@@ -1,35 +1,35 @@
 `timescale 1ns / 1ps
 
 //////////////////////////////////////////////////////////////////////////////
-// Module : URMTriggerTest
-// Purpose: Test bench for the URMTrigger
+// Module : URMEchoTest
+// Purpose: Test bench for the URMEcho module
 //////////////////////////////////////////////////////////////////////////////
-module URMTriggerTest;
+module URMEchoTest;
   
 //////////////////////////////////////////////////////////////////////////////
 // Registers
 //////////////////////////////////////////////////////////////////////////////
 reg Clock;
-reg TriggerIn;
+reg Echo;
  
 //////////////////////////////////////////////////////////////////////////////
 // Wires
 //////////////////////////////////////////////////////////////////////////////
-wire TriggerOut;
+wire[15:0] Distance;
 
 // Instantiate the Unit Under Test (UUT)
 // Test the ultrasonic range module trigger in Verilog
-URMTrigger uut
+URMEcho uut
 (
   .Clock(Clock), 
-  .TriggerIn(TriggerIn),
-  .TriggerOut(TriggerOut)
+  .Echo(Echo),
+  .Distance(Distance)
 );
  
 initial begin
   // Initialize Inputs
   Clock = 0;
-  TriggerIn = 0;
+  Echo = 0;
 end
  
 always begin
@@ -39,14 +39,24 @@ end
 
 always begin
   #10;
-  TriggerIn = 1;
+  Echo = 1;
   
-  #20;
-  TriggerIn = 0;
+  // Test object 1cm away
+  #58000;
+  Echo = 0;
+  
+  #10;
+  Echo = 1;
+  
+  // Test object 2cm away
+  #116000;
+  Echo = 0;  
   
   #100000;
 end
       
 endmodule
+
+
 
 
