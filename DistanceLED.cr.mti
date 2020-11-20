@@ -12,6 +12,13 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	URMTrigger
 
+} {} {}} C:/GitHub/DistanceLED-Altera-Cyclone-II/test/URMEchoTest.v {1 {vlog -work distanceled C:/GitHub/DistanceLED-Altera-Cyclone-II/test/URMEchoTest.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module URMEchoTest
+
+Top level modules:
+	URMEchoTest
+
 } {} {}} C:/GitHub/DistanceLED-Altera-Cyclone-II/test/ClockDividerTest.v {1 {vlog -work distanceled C:/GitHub/DistanceLED-Altera-Cyclone-II/test/ClockDividerTest.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling module ClockDividerTest

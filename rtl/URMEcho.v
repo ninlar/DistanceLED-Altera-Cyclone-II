@@ -55,7 +55,7 @@ end
 always @(posedge _clock)
 begin
   // Increment counter
-  _counter = _counter + 15'd1;
+  _counter = _counter + 16'd1;
 end
 
 // When the echo signal completes...
